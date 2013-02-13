@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="authorDefault.aspx" title="Home"  description="Home" roles="*">
+    <siteMapNode url="" title="Page Management"  description="Page Management" roles="*">
+      <siteMapNode url="~/author/pageCreate.aspx" title="Create Page"  description="Create Page" roles="*" />
+    </siteMapNode>
+    <siteMapNode title="Editable Pages" description="Editable Pages" roles="*">
+      <siteMapNode url="~/public/NEWS.aspx" title="NEWS" description="NEWS" roles="*" />
+      <siteMapNode url="~/public/SpotlightPage.aspx" title="Spotlight" description="Spotlight" roles="*" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

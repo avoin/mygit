@@ -1,0 +1,50 @@
+﻿@model BTS630a04.Models.Professor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Professor</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkStatus.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkStatus.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TermStatus.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TermStatus.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProfessorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

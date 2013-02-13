@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="communityDefault.aspx" title="Home" description="Home" roles="*">
+    <siteMapNode title="School of ICT" description="School of ICT" url="" roles="*">
+      <siteMapNode url="http://www.senecac.on.ca" title="Seneca Homepage" description="Seneca" roles="*" />
+      <siteMapNode url="~/public/AcademicPolicy.aspx" title="Academic Policy" description="Academic Policy" roles="*" />
+      <siteMapNode url="~/public/ContactUs.aspx" title="Contact Us" description="Contact Us" roles="*"/>
+    </siteMapNode>
+
+    <siteMapNode title="Programs" url="" description="Programs" roles="*">
+      <siteMapNode url="~/community/programOverview.aspx" title="Program Overview" description="Program Overview" roles="*" />
+      <siteMapNode url="~/community/diplomas.aspx" title="Diploma Programs" description="Diploma Programs" roles="*" />
+      <siteMapNode url="~/community/degrees.aspx" title="Bachelor's Degrees" description="Bachelor's Degrees" roles="*" />
+      <siteMapNode url="~/community/graduate.aspx" title="Graduate Certificates" description="Graduate Certificates" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Community" roles="*" description="Community">
+      <siteMapNode url="http://www.senecac.on.ca/students/priorlearningassessment.html" title="PLA" description="Prior Learning Assessment" roles="*" />
+      <siteMapNode url="http://cdot.senecac.on.ca/" title="CDOT" description="Centre for Development of Open Source Technology" roles="*" />
+      <siteMapNode url="http://fsoss.senecac.on.ca/" title="FSOSS" description="Free Software and Open Source Symposium" roles="*" />
+      <siteMapNode url="~/community/universityTransfering.aspx" title="University Transfering" description="University Transfering" roles="*" />
+      <siteMapNode url="http://www.workforceready.ca/" title="Jobs" description="Jobs" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Account" description="Account" roles="*">
+      <siteMapNode url="~/public/changePassword.aspx" title="Change Password" description="Change Password" roles="*" />
+      <siteMapNode url="~/public/recoverPassword.aspx" title="Password Recovery" description="Password Recovery" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Resources" description="Resources" roles="*">
+      <siteMapNode url="http://www.senecac.on.ca/students/startingcareer.html" title="Career" description="Career" roles="*" />
+      <siteMapNode url="http://cooptechnology.senecac.on.ca/" title="Co-op Education" description="Co-op Education" roles="*" />
+      <siteMapNode url="~/public/directions.aspx" title="Directions to Our Campus" description="Directions" roles="*" />
+      <siteMapNode url="https://scs.senecac.on.ca/system/files/cs_page/2033/newsletter_summer2012.pub" title="First Semester Guide" description="Guide" roles="*" />
+      <siteMapNode url="~/community/admissionsAndFees.aspx" title="Admissions and Fees" description="Admissions and Fees" roles="*" />
+      <siteMapNode url="~/community/clubs.aspx" title="Clubs" description="Clubs" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Other goodies" description="Other goodies" roles="*">
+      <siteMapNode url="~/public/NEWS.aspx" title="NEWS" description="NEWS" roles="*" />
+      <siteMapNode url="~/public/SpotlightPage.aspx" title="Spotlight" description="Spotlight" roles="*" />
+    </siteMapNode>
+    
+    
+  </siteMapNode>
+</siteMap>

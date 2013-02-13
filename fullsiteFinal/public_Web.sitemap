@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="Default.aspx" title="Home" description="Home" roles="*">
+    <siteMapNode title="School of ICT" description="School of ICT" url="" roles="*">
+      <siteMapNode url="http://www.senecac.on.ca" title="Seneca Homepage" description="Seneca" roles="*" />
+      <siteMapNode url="~/public/AcademicPolicy.aspx" title="Academic Policy" description="Academic Policy" roles="*" />
+      <siteMapNode url="~/public/ContactUs.aspx" title="Contact Us" description="Contact Us" roles="*"/>
+    </siteMapNode>
+    
+    <siteMapNode title="Programs" url="" description="Programs" roles="*">
+      <siteMapNode url="~/public/programOverview.aspx" title="Program Overview" description="Program Overview" roles="*" />
+      <siteMapNode url="~/public/diplomas.aspx" title="Diploma Programs" description="Diploma Programs" roles="*" />
+      <siteMapNode url="~/public/degrees.aspx" title="Bachelor's Degrees" description="Bachelor's Degrees" roles="*" />
+      <siteMapNode url="~/public/graduate.aspx" title="Graduate Certificates" description="Graduate Certificates" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Resources" description="Resources" roles="*">
+      <siteMapNode url="~/public/directions.aspx" title="Directions to Our Campus" description="Directions" roles="*" />
+      <siteMapNode url="~/public/admissionsAndFees.aspx" title="Admissions and Fees" description="Admissions and Fees" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Other goodies" description="Other goodies" roles="*">
+      <siteMapNode url="~/public/NEWS.aspx" title="NEWS" description="NEWS" roles="*" />
+      <siteMapNode url="~/public/SpotlightPage.aspx" title="Spotlight" description="Spotlight" roles="*" />
+    </siteMapNode>
+    
+    <siteMapNode title="Create Account" description="Create Account" url="~/public/CreateUser.aspx" roles="*">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

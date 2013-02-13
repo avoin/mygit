@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="studentDefault.aspx" title="Home" description="Home" roles="*">
+    <siteMapNode title="School of ICT" description="School of ICT" url="" roles="*">
+      <siteMapNode url="http://www.senecac.on.ca" title="Seneca Homepage" description="Seneca" roles="*" />
+      <siteMapNode url="~/student/stafflist.aspx" title="Staff List" description="Staff List" roles="*" />
+      <siteMapNode url="~/student/studentlist.aspx" title="Student List" description="Student List" roles="*" />
+      <siteMapNode url="~/student/AcademicPolicy.aspx" title="Academic Policy" description="Academic Policy" roles="*" />
+    </siteMapNode>
+    
+    <siteMapNode title="Programs" url="" description="Programs" roles="*">
+      <siteMapNode url="~/student/programOverview.aspx" title="Program Overview" description="Program Overview" roles="*" />
+      <siteMapNode url="~/student/diplomas.aspx" title="Diploma Programs" description="Diploma Programs" roles="*" />
+      <siteMapNode url="~/student/degrees.aspx" title="Bachelor's Degrees" description="Bachelor's Degrees" roles="*" />
+      <siteMapNode url="~/student/graduate.aspx" title="Graduate Certificates" description="Graduate Certificates" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Students" description="Students" roles="*">
+      <siteMapNode url="http://open.senecac.on.ca" title="Moodle" description="Moodle" roles="*" />
+      <siteMapNode url="https://siris.senecac.on.ca" title="Siris" description="Siris" roles="*" />
+      <siteMapNode url="http://learn.senecac.on.ca" title="Learn" description="Learn" roles="*" />
+      <siteMapNode url="http://my.senecacollege.ca" title="MySeneca" description="MySeneca" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Account" description="Account" roles="*">
+      <siteMapNode url="~/public/changePassword.aspx" title="Change Password" description="Change Password" roles="*" />
+      <siteMapNode url="~/public/recoverPassword.aspx" title="Password Recovery" description="Password Recovery" roles="*" />
+      
+    </siteMapNode>
+      <siteMapNode title="Resources" description="Resources" roles="*">
+        <siteMapNode url="http://acs.senecac.on.ca" title="ACS Website" description="Academic Computing Systems" roles="*" />
+        <siteMapNode url="https://itsservicedesk.senecacollege.ca/" title="ITS Service Desk" description="ITS Service Desk" roles="*" />
+        <siteMapNode url="http://www.senecac.on.ca/students/startingcareer.html" title="Career" description="Career" roles="*" />
+        <siteMapNode url="http://cooptechnology.senecac.on.ca/" title="Co-op Education" description="Co-op Education" roles="*" />
+        <siteMapNode url="~/public/directions.aspx" title="Directions to Our Campus" description="Directions" roles="*" />
+        <siteMapNode url="https://scs.senecac.on.ca/system/files/cs_page/2033/newsletter_summer2012.pub" title="First Semester Guide" description="Guide" roles="*" />
+        <siteMapNode url="~/student/admissionsAndFees.aspx" title="Admissions and Fees" description="Admissions and Fees" roles="*" />
+        <siteMapNode url="~/student/clubs.aspx" title="Clubs" description="Clubs" roles="*" />
+      </siteMapNode>
+
+    <siteMapNode title="Other goodies" description="Other goodies" roles="*">
+      <siteMapNode url="~/public/NEWS.aspx" title="NEWS" description="NEWS" roles="*" />
+      <siteMapNode url="~/public/SpotlightPage.aspx" title="Spotlight" description="Spotlight" roles="*" />
+    </siteMapNode>
+
+      <siteMapNode title="Contact Us" description="Contact Us" url="~/public/ContactUs.aspx" roles="*" />
+    </siteMapNode>
+</siteMap>
+

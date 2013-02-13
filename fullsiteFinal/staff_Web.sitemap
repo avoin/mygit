@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="staffDefault.aspx" title="Home" description="Home" roles="*">
+    <siteMapNode title="School of ICT" description="School of ICT" url="" roles="*">
+      <siteMapNode url="http://www.senecac.on.ca" title="Seneca Homepage" description="Seneca" roles="*" />
+      <siteMapNode title="Staff List" description="Staff List" url="~/staff/stafflist.aspx" roles="*" />
+      <siteMapNode title="Student List" description="Student List" url="~/staff/studentlist.aspx" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Staff" description="Staff" roles="*">
+      <siteMapNode url="http://open.senecac.on.ca" title="Moodle" description="Moodle" roles="*" />
+      <siteMapNode url="https://siris.senecac.on.ca" title="Siris" description="Siris" roles="*" />
+      <siteMapNode url="http://webmail.senecacollege.ca" title="Webmail" description="Webmail" roles="*" />
+      <siteMapNode url="http://my.senecacollege.ca" title="MySeneca" description="MySeneca" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Account" description="Account" roles="*">
+      <siteMapNode url="~/public/changePassword.aspx" title="Change Password" description="Change Password" roles="*" />
+      <siteMapNode url="~/public/recoverPassword.aspx" title="Password Recovery" description="Password Recovery" roles="*" />
+    </siteMapNode>
+    <siteMapNode title="Resources" description="Resources" roles="*">
+      <siteMapNode url="http://acs.senecac.on.ca" title="ACS Website" description="Academic Computing Systems" roles="*" />
+      <siteMapNode url="https://itsservicedesk.senecacollege.ca/" title="ITS Service Desk" description="ITS Service Desk" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Other goodies" description="Other goodies" roles="*">
+      <siteMapNode url="~/public/NEWS.aspx" title="NEWS" description="NEWS" roles="*" />
+      <siteMapNode url="~/public/SpotlightPage.aspx" title="Spotlight" description="Spotlight" roles="*" />
+    </siteMapNode>
+
+    <siteMapNode title="Contact Us" description="Contact Us" url="~/public/ContactUs.aspx" roles="*">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
