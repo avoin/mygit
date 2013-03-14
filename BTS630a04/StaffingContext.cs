@@ -21,6 +21,12 @@ namespace BTS630a04
         public DbSet<WorkStatus> WorkStatus { get; set; }
         public DbSet<TermStatus> TermStatus { get; set; }
         public DbSet<Location> Location { get; set; }
+
+        public DbSet<Teaching> Teachings { get; set; }
+
+        public DbSet<Link> Links { get; set; }
+        public DbSet<Designation> Designation { get; set; }
+
         
 
     }

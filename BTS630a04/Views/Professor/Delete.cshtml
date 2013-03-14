@@ -44,10 +44,17 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Location.Name)
     </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designation.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation.Title)
+    </div>
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" style="height: 25px; width: 100px" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
 }

@@ -52,8 +52,16 @@
             @Html.ValidationMessageFor(model => model.LocationID)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DesignationID, "Designation")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DesignationID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DesignationID)
+        </div>
+
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" style="height: 25px; width: 100px" value="Create" />
         </p>
     </fieldset>
 }

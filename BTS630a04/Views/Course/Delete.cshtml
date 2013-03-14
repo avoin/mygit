@@ -11,13 +11,6 @@
     <legend>Course</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Semester.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Semester.Name)
-    </div>
-
-    <div class="display-label">
          @Html.DisplayNameFor(model => model.Name)
     </div>
     <div class="display-field">
@@ -40,7 +33,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Delete" style="height: 25px; width: 100px" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
 }

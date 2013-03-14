@@ -1,0 +1,51 @@
+﻿@model BTS630a04.Models.Link
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Link</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProfessorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProfessorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserID, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleID, "Role")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("RoleID", String.Empty)
+            @Html.ValidationMessageFor(model => model.RoleID)
+        </div>
+
+        <p>
+            <input type="submit" style="height: 25px; width: 100px" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

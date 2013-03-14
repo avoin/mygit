@@ -15,14 +15,6 @@
         @Html.HiddenFor(model => model.CourseID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.SemesterID, "Semester")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("SemesterID", String.Empty)
-            @Html.ValidationMessageFor(model => model.SemesterID)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">
@@ -47,7 +39,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" style="height: 25px; width: 100px" />
         </p>
     </fieldset>
 }

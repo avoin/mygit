@@ -51,23 +51,32 @@ namespace BTS630a04.Models
     {
         [DisplayName("Course")]
         public int CourseID { get; set; }
-        [DisplayName("Semester")]
-        public int SemesterID { get; set; }
 
-        [Required(ErrorMessage = "A Name is required")]
+        [Required(ErrorMessage = "A Course Title is required")]
+        [DisplayName("Course Title")]
         public String Name { get; set; }
 
         [Required(ErrorMessage = "A Description is required")]
         public String Description { get; set; }
         
-        [MinLength(7, ErrorMessage = "You must enter 7-8 characters which includes the section i.e. BTP600A, BTP600AB")]
-        [MaxLength(8, ErrorMessage = "You must enter 7-8 characters which includes the section i.e. BTP600A, BTP600AB")]
+        [MinLength(6, ErrorMessage = "You must enter 6 characters (do not include the section")]
         public String Code { get; set; }
 
         //Navigation Properties
-        [DisplayName("Semester")]
-        public virtual Semester Semester { get; set; }
+        [DisplayName("Professor")]
+        public virtual Professor Professor { get; set; }
 
+    }
+
+    public class Teaching {
+        public int TeachingID { get; set; }
+        public int ProfessorID { get; set; }
+        public int CourseID { get; set; }
+        public String Section { get; set; }
+
+        //Navigation Properties
+        public virtual Professor Professor { get; set; }
+        public virtual Course Course { get; set; }
     }
 
     public class Major
@@ -117,8 +126,9 @@ namespace BTS630a04.Models
 
     public class WorkStatus {
 
-        [DisplayName("Work Status")]
+       
         public int WorkStatusID { get; set; }
+         [DisplayName("Work Status")]
         public String Status { get; set; }
 
         //Navigation Properties
@@ -129,9 +139,22 @@ namespace BTS630a04.Models
 
     public class TermStatus
     {
-        [DisplayName("Term Status")]
+       
         public int TermStatusID { get; set; }
+        [DisplayName("Term Status")]
         public String Status { get; set; }
+
+        //Navigation Properties
+        public virtual List<Professor> ProfessorList { get; set; }
+
+    }
+
+    public class Designation
+    {
+
+        public int DesignationID { get; set; }
+        [DisplayName("Designation")]
+        public String Title { get; set; }
 
         //Navigation Properties
         public virtual List<Professor> ProfessorList { get; set; }
@@ -161,6 +184,9 @@ namespace BTS630a04.Models
         [DisplayName("Location")]
         public int LocationID { get; set; }
 
+        [DisplayName("Designation")]
+        public int DesignationID { get; set; }
+
         //Navigation Properties
         [DisplayName("Term Status")]
         public virtual TermStatus TermStatus { get; set; }
@@ -174,12 +200,20 @@ namespace BTS630a04.Models
         [DisplayName("Location")]
         public virtual Location Location { get; set; }
 
+        [DisplayName("Courses")]
+        public virtual List<Course> CourseList { get; set; }
+
+        [DisplayName("Designation")]
+        public virtual Designation Designation { get; set; }
+
+
     }
 
     public class Location
     {
-        [DisplayName("Location")]
+        
         public int LocationID { get; set; }
+        [DisplayName("Location")]
         public String Name { get; set; }
 
         //Navigation Properties
@@ -227,24 +261,28 @@ namespace BTS630a04.Models
     {
         [DisplayName("User")]
         public int UserID { get; set; }
-        [DisplayName("Role")]
-        public int RoleID { get; set; }
-        [DisplayName("Professor")]
-        public int? ProfessorID { get; set; }
+        
 
-        [Required(ErrorMessage = "An Name is required")]
-        public String Name { get; set; }
+        [Required(ErrorMessage = "An Username is required")]
+        public String Username { get; set; }
 
         [Required(ErrorMessage = "A Password is required")]
         public String Password { get; set; }
 
         
+    }
+
+    public class Link {
+        public int LinkID { get; set; }
+        public int? ProfessorID { get; set; }
+        public int UserID { get; set; }
+        public int RoleID { get; set; }
 
         //Navigation Properties
         public virtual Professor Professor { get; set; }
+        public virtual User User { get; set; }
         public virtual Role Role { get; set; }
     }
-
 
 
 }

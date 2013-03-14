@@ -1,0 +1,36 @@
+﻿@model BTS630a04.Models.Link
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Link</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Professor.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Professor.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.LinkID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
