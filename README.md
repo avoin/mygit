@@ -1,0 +1,4 @@
+mygit
+=====
+
+some school stuff
