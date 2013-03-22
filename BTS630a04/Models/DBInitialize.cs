@@ -22,9 +22,9 @@ namespace BTS630a04.Models
             var termStatus = new List<TermStatus>
             {
                 new TermStatus{ Status = "Part-Time"},
-                new TermStatus {Status = "Full Time"},
-                new TermStatus {Status = "Parial Load"},
-                new TermStatus {Status = "Seasonal"}
+                new TermStatus {Status = "Full-Time"},
+                new TermStatus {Status = "Parial-Load"},
+                new TermStatus {Status = "Sessional"}
 
 
             };
@@ -35,7 +35,9 @@ namespace BTS630a04.Models
 
             var locations = new List<Location> 
             { 
-                new Location { Name = "Seneca@York"}
+                new Location { Name = "King"},
+                new Location { Name = "Seneca@York"},
+                new Location { Name = "Markham"}
             
             };
 
@@ -50,6 +52,25 @@ namespace BTS630a04.Models
             };
 
             roles.ForEach(r => context.Roles.Add(r));
+
+            var designation = new List<Designation>
+            {
+                new Designation{ Title = "Professor"},
+                new Designation {Title = "Chair"},
+                new Designation { Title = "Co-Ordinator"}
+             
+            };
+
+            designation.ForEach(t => context.Designation.Add(t));
+
+            var credentialsType = new List<CredentialsType>
+            {
+                new CredentialsType { Type = "Degree" },
+                new CredentialsType { Type = "Diploma" },
+                new CredentialsType { Type = "Certification" }
+            };
+
+            credentialsType.ForEach(c => context.CredentialsType.Add(c));
 
             context.SaveChanges();
         

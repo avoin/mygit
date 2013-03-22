@@ -1,0 +1,45 @@
+﻿@model BTS630a04.Models.Semestercourses
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Semestercourses</legend>
+
+        @Html.HiddenFor(model => model.SemestercoursesID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SemesterID, "Semester")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SemesterID", String.Empty)
+            @Html.ValidationMessageFor(model => model.SemesterID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CourseID, "Course")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CourseID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CourseID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

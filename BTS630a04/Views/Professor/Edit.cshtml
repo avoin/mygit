@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
-
+<span class="usecase">UC 01, UC 05, UC 06</span>
 <h2>Edit</h2>
 
 @using (Html.BeginForm()) {
@@ -54,8 +54,16 @@
             @Html.ValidationMessageFor(model => model.LocationID)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DesignationID, "Designation")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DesignationID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DesignationID)
+        </div>
+
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" style="height: 25px; width: 100px" value="Save" />
         </p>
     </fieldset>
 }

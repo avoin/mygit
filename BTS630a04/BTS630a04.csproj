@@ -128,11 +128,16 @@
     <Compile Include="Controllers\CredentialsController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinkController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\MajorController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
+    <Compile Include="Controllers\ProgramcoursesController.cs" />
+    <Compile Include="Controllers\ReportingController.cs" />
     <Compile Include="Controllers\SemesterController.cs" />
+    <Compile Include="Controllers\SemestercoursesController.cs" />
+    <Compile Include="Controllers\TeachingController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -146,7 +151,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="assets\css\seneca.css" />
     <Content Include="Global.asax" />
+    <Content Include="assets\css\960.css" />
+    <Content Include="assets\css\grid.css" />
+    <Content Include="assets\css\ie.css" />
+    <Content Include="assets\css\ie6.css" />
+    <Content Include="assets\css\layout.css" />
+    <Content Include="assets\css\nav.css" />
+    <Content Include="assets\css\reset.css" />
+    <Content Include="assets\css\text.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,21 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Semester\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Credentials\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Credentials\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Credentials\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Credentials\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Credentials\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Major\Index.cshtml" />
@@ -223,19 +222,53 @@
     <Content Include="Views\Program\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\Index.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Location\Edit.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\Details.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\Create.cshtml" />
+    <Content Include="Views\SiteLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\Edit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\Delete.cshtml" />
+    <Content Include="Views\Teaching\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teaching\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teaching\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teaching\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teaching\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\Index.cshtml" />
@@ -253,11 +286,22 @@
     <Content Include="Views\User\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Location\Create.cshtml" />
-    <Content Include="Views\Location\Delete.cshtml" />
-    <Content Include="Views\Location\Details.cshtml" />
-    <Content Include="Views\Location\Edit.cshtml" />
-    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Link\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Link\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Link\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Link\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Link\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporting\TermStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Professor\Index.cshtml" />
@@ -275,25 +319,67 @@
     <Content Include="Views\Professor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Reporting\WorkStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SiteLayout.cshtml" />
+    <Content Include="Views\Credentials\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Credentials\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Credentials\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Credentials\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Credentials\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Experience\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Semestercourses\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Semestercourses\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Semestercourses\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Semestercourses\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Semestercourses\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Programcourses\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Programcourses\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Programcourses\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Programcourses\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Programcourses\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

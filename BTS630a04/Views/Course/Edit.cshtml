@@ -4,6 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
+<span class="usecase">UC 04, UC 06</span>
 <h2>Edit</h2>
 
 @using (Html.BeginForm()) {
@@ -13,14 +14,6 @@
         <legend>Course</legend>
 
         @Html.HiddenFor(model => model.CourseID)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SemesterID, "Semester")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("SemesterID", String.Empty)
-            @Html.ValidationMessageFor(model => model.SemesterID)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
@@ -47,7 +40,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" style="height: 25px; width: 100px" />
         </p>
     </fieldset>
 }

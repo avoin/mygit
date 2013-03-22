@@ -18,8 +18,7 @@ namespace BTS630a04.Controllers
 
         public ActionResult Index()
         {
-            var users = db.Users.Include(u => u.Professor).Include(u => u.Role);
-            return View(users.ToList());
+            return View(db.Users.ToList());
         }
 
         //
@@ -40,8 +39,6 @@ namespace BTS630a04.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName");
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "Name");
             return View();
         }
 
@@ -58,8 +55,6 @@ namespace BTS630a04.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", user.ProfessorID);
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "Name", user.RoleID);
             return View(user);
         }
 
@@ -73,8 +68,6 @@ namespace BTS630a04.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", user.ProfessorID);
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "Name", user.RoleID);
             return View(user);
         }
 
@@ -90,8 +83,6 @@ namespace BTS630a04.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", user.ProfessorID);
-            ViewBag.RoleID = new SelectList(db.Roles, "RoleID", "Name", user.RoleID);
             return View(user);
         }
 

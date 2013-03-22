@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BTS630a04.Models.Link>
+
+@{
+    ViewBag.Title = "Index";
+}
+<span class="usecase">UC 01, UC 07</span>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Professor.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Professor.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LinkID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LinkID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LinkID })
+        </td>
+    </tr>
+}
+
+</table>

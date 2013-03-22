@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
-
+<span class="usecase">UC 01, UC 05, UC 06</span>
 <h2>Details</h2>
 
 <fieldset>
@@ -42,6 +42,13 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Location.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designation.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation.Title)
     </div>
 </fieldset>
 <p>

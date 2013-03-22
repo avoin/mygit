@@ -13,10 +13,10 @@
         <legend>Experience</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ProfessorID)
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ProfessorID)
+            @Html.DropDownList("ProfessorID", String.Empty)
             @Html.ValidationMessageFor(model => model.ProfessorID)
         </div>
 

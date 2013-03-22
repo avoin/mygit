@@ -18,7 +18,7 @@ namespace BTS630a04.Controllers
 
         public ActionResult Index()
         {
-            var professors = db.Professors.Include(p => p.TermStatus).Include(p => p.WorkStatus).Include(p => p.Location);
+            var professors = db.Professors.Include(p => p.TermStatus).Include(p => p.WorkStatus).Include(p => p.Location).Include(p => p.Designation);
             return View(professors.ToList());
         }
 
@@ -43,6 +43,7 @@ namespace BTS630a04.Controllers
             ViewBag.TermStatusID = new SelectList(db.TermStatus, "TermStatusID", "Status");
             ViewBag.WorkStatusID = new SelectList(db.WorkStatus, "WorkStatusID", "Status");
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Name");
+            ViewBag.DesignationID = new SelectList(db.Designation, "DesignationID", "Title");
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace BTS630a04.Controllers
             ViewBag.TermStatusID = new SelectList(db.TermStatus, "TermStatusID", "Status", professor.TermStatusID);
             ViewBag.WorkStatusID = new SelectList(db.WorkStatus, "WorkStatusID", "Status", professor.WorkStatusID);
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Name", professor.LocationID);
+            ViewBag.DesignationID = new SelectList(db.Designation, "DesignationID", "Title", professor.DesignationID);
             return View(professor);
         }
 
@@ -78,6 +80,7 @@ namespace BTS630a04.Controllers
             ViewBag.TermStatusID = new SelectList(db.TermStatus, "TermStatusID", "Status", professor.TermStatusID);
             ViewBag.WorkStatusID = new SelectList(db.WorkStatus, "WorkStatusID", "Status", professor.WorkStatusID);
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Name", professor.LocationID);
+            ViewBag.DesignationID = new SelectList(db.Designation, "DesignationID", "Title", professor.DesignationID);
             return View(professor);
         }
 
@@ -96,6 +99,7 @@ namespace BTS630a04.Controllers
             ViewBag.TermStatusID = new SelectList(db.TermStatus, "TermStatusID", "Status", professor.TermStatusID);
             ViewBag.WorkStatusID = new SelectList(db.WorkStatus, "WorkStatusID", "Status", professor.WorkStatusID);
             ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Name", professor.LocationID);
+            ViewBag.DesignationID = new SelectList(db.Designation, "DesignationID", "Title", professor.DesignationID);
             return View(professor);
         }
 

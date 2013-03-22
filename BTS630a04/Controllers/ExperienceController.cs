@@ -18,7 +18,8 @@ namespace BTS630a04.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Experiences.ToList());
+            var experiences = db.Experiences.Include(e => e.Professor);
+            return View(experiences.ToList());
         }
 
         //
@@ -39,6 +40,7 @@ namespace BTS630a04.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace BTS630a04.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", experience.ProfessorID);
             return View(experience);
         }
 
@@ -68,6 +71,7 @@ namespace BTS630a04.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", experience.ProfessorID);
             return View(experience);
         }
 
@@ -83,6 +87,7 @@ namespace BTS630a04.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ProfessorID = new SelectList(db.Professors, "ProfessorID", "FirstName", experience.ProfessorID);
             return View(experience);
         }
 

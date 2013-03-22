@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
 }
 
+<span class="usecase">UC 01, UC 05, UC 06</span>
 <h2>Index</h2>
 
 <p>
@@ -26,6 +27,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Location.Name)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation.Title)
+        </th>
         <th></th>
     </tr>
 
@@ -45,6 +49,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Location.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation.Title)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProfessorID }) |

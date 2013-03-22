@@ -1,16 +1,69 @@
-﻿<!DOCTYPE html>
+﻿@{
+    List<String> Menu =new List<string>{
+        "Course", "Credentials", "Experience", "Location", "Major", "Professor", "Program", "Semester", "Teaching", "Semestercourses", "User", "Link"
+    };
+};
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>SiteLayout - @ViewBag.Title</title>
+    <title>Seneca Staffing Application - @ViewBag.Title</title>
+    <link href="@Url.Content("~/assets/css/reset.css")" rel="stylesheet" type="text/css" media="screen" />
+     <link href="@Url.Content("~/assets/css/text.css")" rel="stylesheet" type="text/css" media="screen" />
+     <link href="@Url.Content("~/assets/css/grid.css")" rel="stylesheet" type="text/css" media="screen" />
+     <link href="@Url.Content("~/assets/css/layout.css")" rel="stylesheet" type="text/css" media="screen" />
+     <link href="@Url.Content("~/assets/css/nav.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/assets/css/seneca.css")" rel="stylesheet" type="text/css" media="screen" />
+    <!--[if IE 6]><link rel="stylesheet" type="text/css" href="@Url.Content("~/assets/css/ie6.css")" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" type="text/css" href="@Url.Content("~/assets/css/ie.css")" media="screen" /><![endif]-->
 </head>
 <body>
-    <div>
-        @RenderBody();
-    </div>
+    <div class="container_16">
+        <div class="grid_16">
+            <h1 id="branding">
+                Seneca Staffing Application
+            </h1>
+        </div>
+        <div class="clear"></div>
+        <div class="grid_16">
+				<ul class="nav main">
+                    <li>
+                        <a href ="/">Home</a>
+                    </li>
+                @foreach( String i in @Menu) {    
+					<li>
+						<a href="~/@i">@i</a>
+						<ul>
+							<li>
+								<a href="~/@i/Create">Add @i</a> 
+							</li>
+
+						</ul>
+					</li>
+                }
+                    <li class="secondary">
+						<a href="/">Secondary Menu item</a>
+                        <!--http://960.gs/ title="960.gs | A CSS grid system developed by Nathan Smith"-->
+					</li>
+				</ul>
+			</div>
+        <div class="clear"></div>
+       
+        <div>
+       <div class="grid_16">
+				 @RenderBody()
     @if (IsSectionDefined("scripts")) {
-       @RenderSection("scripts", required: false);
+       @RenderSection("scripts", required: false)
     }
+
+			</div>
+        <div class="clear"></div>
+        
+  
+        </div>
+
+    </div>
 </body>
 </html>

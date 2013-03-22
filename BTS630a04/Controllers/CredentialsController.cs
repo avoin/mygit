@@ -18,7 +18,7 @@ namespace BTS630a04.Controllers
 
         public ActionResult Index()
         {
-            var credentials = db.Credentials.Include(c => c.Major);
+            var credentials = db.Credentials.Include(c => c.Major).Include(c => c.CredentialsType);
             return View(credentials.ToList());
         }
 
@@ -41,6 +41,7 @@ namespace BTS630a04.Controllers
         public ActionResult Create()
         {
             ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "Name");
+            ViewBag.CredentialsTypeID = new SelectList(db.CredentialsType, "CredentialsTypeID", "Type");
             return View();
         }
 
@@ -58,6 +59,7 @@ namespace BTS630a04.Controllers
             }
 
             ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "Name", credentials.MajorID);
+            ViewBag.CredentialsTypeID = new SelectList(db.CredentialsType, "CredentialsTypeID", "Type", credentials.CredentialsTypeID);
             return View(credentials);
         }
 
@@ -72,6 +74,7 @@ namespace BTS630a04.Controllers
                 return HttpNotFound();
             }
             ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "Name", credentials.MajorID);
+            ViewBag.CredentialsTypeID = new SelectList(db.CredentialsType, "CredentialsTypeID", "Type", credentials.CredentialsTypeID);
             return View(credentials);
         }
 
@@ -88,6 +91,7 @@ namespace BTS630a04.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MajorID = new SelectList(db.Majors, "MajorID", "Name", credentials.MajorID);
+            ViewBag.CredentialsTypeID = new SelectList(db.CredentialsType, "CredentialsTypeID", "Type", credentials.CredentialsTypeID);
             return View(credentials);
         }
 

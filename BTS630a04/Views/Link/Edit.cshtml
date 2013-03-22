@@ -1,0 +1,53 @@
+﻿@model BTS630a04.Models.Link
+
+@{
+    ViewBag.Title = "Edit";
+}
+<span class="usecase">UC 01, UC 07</span>
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Link</legend>
+
+        @Html.HiddenFor(model => model.LinkID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProfessorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProfessorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserID, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleID, "Role")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("RoleID", String.Empty)
+            @Html.ValidationMessageFor(model => model.RoleID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

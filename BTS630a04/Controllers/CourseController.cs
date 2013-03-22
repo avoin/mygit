@@ -18,8 +18,7 @@ namespace BTS630a04.Controllers
 
         public ActionResult Index()
         {
-            var courses = db.Courses.Include(c => c.Semester);
-            return View(courses.ToList());
+            return View(db.Courses.ToList());
         }
 
         //
@@ -40,7 +39,6 @@ namespace BTS630a04.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.SemesterID = new SelectList(db.Semesters, "SemesterID", "Name");
             return View();
         }
 
@@ -57,7 +55,6 @@ namespace BTS630a04.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SemesterID = new SelectList(db.Semesters, "SemesterID", "Name", course.SemesterID);
             return View(course);
         }
 
@@ -71,7 +68,6 @@ namespace BTS630a04.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SemesterID = new SelectList(db.Semesters, "SemesterID", "Name", course.SemesterID);
             return View(course);
         }
 
@@ -87,7 +83,6 @@ namespace BTS630a04.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SemesterID = new SelectList(db.Semesters, "SemesterID", "Name", course.SemesterID);
             return View(course);
         }
 

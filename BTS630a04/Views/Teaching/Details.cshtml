@@ -1,0 +1,36 @@
+﻿@model BTS630a04.Models.Teaching
+
+@{
+    ViewBag.Title = "Details";
+}
+<span class="usecase">UC 05</span>
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Teaching</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Professor.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Professor.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Course.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Course.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Section)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Section)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TeachingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
