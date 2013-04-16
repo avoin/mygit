@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BTS630a04.Models.Professor>
+
+@{
+    ViewBag.Title = "Term Status";
+}
+
+<h2>Term Status Report</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TermStatus.Status)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TermStatus.Status)
+        </td>
+    </tr>
+}
+
+</table>

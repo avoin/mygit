@@ -1,0 +1,29 @@
+﻿@model BTS630a04.Models.Semestercourses
+
+@{
+    ViewBag.Title = "View Details On  An Association Between A Semester And A Course";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Semestercourses</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Semester.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Semester.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Course.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Course.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SemestercoursesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

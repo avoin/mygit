@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BTS630a04.Models.Link>
+
+@{
+    ViewBag.Title = "Profile List";
+}
+
+<h2>Profile List</h2>
+
+<table>
+    <tr>
+        <th>
+            Full Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Professor.FirstName)&nbsp; @Html.DisplayFor(modelItem => item.Professor.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Profile", "UserName", new { id=item.UserName })
+        </td>
+    </tr>
+}
+
+</table>

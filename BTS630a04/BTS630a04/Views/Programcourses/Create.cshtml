@@ -1,0 +1,43 @@
+﻿@model BTS630a04.Models.Programcourses
+
+@{
+    ViewBag.Title = "Create An Association Between A Program And A Course";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Programcourses</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProgramID, "Program")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProgramID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProgramID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CourseID, "Course")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CourseID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CourseID)
+        </div>
+
+        <p>
+            <br /><input  type="submit" value="Create"  />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    
+}

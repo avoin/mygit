@@ -1,0 +1,18 @@
+﻿.usecase
+{
+    display:inline; float:right;
+    /*visibility:hidden; */
+}
+.highlighted
+{
+    background:yellow;
+}
+button, input[type="button"], input[type="submit"]
+{
+    height: 25px; width: 100px;
+}
+
+ul.ui-autocomplete.ui-menu{
+    width:100px;
+
+}

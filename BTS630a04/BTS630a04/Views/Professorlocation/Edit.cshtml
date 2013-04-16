@@ -1,0 +1,45 @@
+﻿@model BTS630a04.Models.Professorlocation
+
+@{
+    ViewBag.Title = "Edit An Association Between A Professor And A Location";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Professorlocation</legend>
+
+        @Html.HiddenFor(model => model.ProfessorlocationID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationID, "Location")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LocationID", String.Empty)
+            @Html.ValidationMessageFor(model => model.LocationID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProfessorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProfessorID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    
+}

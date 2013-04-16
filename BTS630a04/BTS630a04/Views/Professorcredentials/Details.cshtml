@@ -1,0 +1,29 @@
+﻿@model BTS630a04.Models.Professorcredentials
+
+@{
+    ViewBag.Title = "View Details Of A Professor Credential";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Professorcredentials</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Professor.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Professor.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Credentials.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Credentials.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProfessorCredentialsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

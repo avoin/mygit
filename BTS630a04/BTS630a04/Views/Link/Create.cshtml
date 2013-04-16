@@ -1,0 +1,52 @@
+﻿@model BTS630a04.Models.Link
+
+@{
+    ViewBag.Title = "Create A New Link Between A Professor Profile And A User Account";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Link</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProfessorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProfessorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Role)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Role)
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+     
+    @Scripts.Render("~/assets/js/autocomplete.js")
+}

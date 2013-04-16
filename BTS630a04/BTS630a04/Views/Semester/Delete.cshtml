@@ -1,0 +1,39 @@
+﻿@model BTS630a04.Models.Semester
+
+@{
+    ViewBag.Title = "Delete A Semester";
+}
+<span class="usecase">UC 04, UC 06</span>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Semester</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Program.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Program.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Year)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <br /><input  type="submit" value="Delete"  /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,96 @@
+﻿@model BTS630a04.Controllers.ProfileController.ProfileObject
+
+
+@{
+    ViewBag.Title = "Profile";
+    bool isprofessor = Roles.IsUserInRole(Model.UserName, "Professor");
+    
+    
+}
+
+        <h2>Profile</h2>
+
+        @if (isprofessor)
+        {
+            <fieldset>
+            <legend>Professor</legend>
+
+            <div class="display-label">
+                 First Name
+            </div>
+            <div class="display-field">
+                @Model.professor.FirstName
+            </div>
+
+            <div class="display-label">
+                 Last Name
+            </div>
+            <div class="display-field">
+                @Model.professor.LastName
+            </div>
+
+            <div class="display-label">
+                 Work Status
+            </div>
+            <div class="display-field">
+                @Model.workstatus.Status
+            </div>
+
+            <div class="display-label">
+                 Term Status
+            </div>
+            <div class="display-field">
+                @Model.termstatus.Status
+            </div>
+            
+            <div class="display-label">
+                 Designation
+            </div>
+            <div class="display-field">
+                @Model.designation.Title
+            </div>
+
+
+            </fieldset> 
+    
+            <fieldset>
+                <legend>Courses</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Course Name
+                        </th>
+                        <th>
+                            Course Description
+                        </th>
+                        <th>
+                            Course Code
+                        </th>
+                        <th>
+                            Course Section
+                        </th>
+                    </tr>
+                    @for (int i = 0; i < Model.courses.Count;i++ )
+                    {
+                        <tr>
+                            <td>
+                                @Model.courses.ElementAt(i).Name
+                            </td>
+                            <td>
+                                @Model.courses.ElementAt(i).Description
+                            </td>
+                            <td>
+                                @Model.courses.ElementAt(i).Code
+                            </td>
+                            <td>
+                                @Model.teachings.ElementAt(i).Section
+                            </td>
+                        </tr>                    
+                    }
+                </table>
+            </fieldset>
+
+        }
+        else{
+            <h2>There is no data to display!</h2>
+        }

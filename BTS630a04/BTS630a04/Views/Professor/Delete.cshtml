@@ -1,0 +1,53 @@
+﻿@model BTS630a04.Models.Professor
+
+@{
+    ViewBag.Title = "Delete A Professor";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Professor</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.WorkStatus.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WorkStatus.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TermStatus.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TermStatus.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designation.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designation.Title)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

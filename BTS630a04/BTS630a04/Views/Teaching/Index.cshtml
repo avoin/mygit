@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BTS630a04.Models.Teaching>
+
+@{
+    ViewBag.Title = "List of All Courses Being Taught";
+}
+<span class="usecase">UC 05</span>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Full Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Professor.FirstName)&nbsp;
+            @Html.DisplayFor(modelItem => item.Professor.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TeachingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TeachingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TeachingID })
+        </td>
+    </tr>
+}
+
+</table>

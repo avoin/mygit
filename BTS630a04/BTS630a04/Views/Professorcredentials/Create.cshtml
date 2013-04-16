@@ -1,0 +1,40 @@
+﻿@model BTS630a04.Models.Professorcredentials
+
+@{
+    ViewBag.Title = "Associate A Credential With A Professor";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Professorcredentials</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProfessorID, "Professor")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ProfessorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ProfessorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CredentialsID, "Credentials")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CredentialsID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CredentialsID)
+        </div>
+
+        <p>
+            <br /><input  type="submit" value="Create"  />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

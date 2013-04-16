@@ -1,0 +1,32 @@
+﻿@model BTS630a04.Models.Professorcredentials
+
+@{
+    ViewBag.Title = "Delete An Association Between A Credential And A Professor";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Professorcredentials</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Professor.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Professor.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Credentials.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Credentials.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <br /><input  type="submit" value="Delete"  /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

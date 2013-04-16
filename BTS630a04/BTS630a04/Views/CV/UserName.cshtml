@@ -1,0 +1,143 @@
+﻿@model BTS630a04.Controllers.CVController.CVObject
+
+
+@{
+    ViewBag.Title = "CV";
+    bool isprofessor = Roles.IsUserInRole(Model.UserName, "Professor");
+    
+    
+}
+
+        <h2>CV</h2>
+
+        @if (isprofessor)
+        {
+            <fieldset>
+            <legend>Professor</legend>
+
+            <div class="display-label">
+                 First Name
+            </div>
+            <div class="display-field">
+                @Model.professor.FirstName
+            </div>
+
+            <div class="display-label">
+                 Last Name
+            </div>
+            <div class="display-field">
+                @Model.professor.LastName
+            </div>
+
+            <div class="display-label">
+                 Work Status
+            </div>
+            <div class="display-field">
+                @Model.workstatus.Status
+            </div>
+
+            <div class="display-label">
+                 Term Status
+            </div>
+            <div class="display-field">
+                @Model.termstatus.Status
+            </div>
+            
+            <div class="display-label">
+                 Designation
+            </div>
+            <div class="display-field">
+                @Model.designation.Title
+            </div>
+
+
+            </fieldset> 
+    
+            <fieldset>
+                <legend>Credentials</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Credential Name
+                        </th>
+                        <th>
+                            Credential Description
+                        </th>
+                        <th>
+                            Credential Code
+                        </th>
+                        
+                    </tr>
+                    @for (int i = 0; i < Model.credentials.Count;i++ )
+                    {
+                        <tr>
+                            <td>
+                                @Model.credentials.ElementAt(i).Name
+                            </td>
+                            <td>
+                                @Model.credentials.ElementAt(i).Description
+                            </td>
+                            <td>
+                                @Model.credentials.ElementAt(i).Code
+                            </td>
+                        </tr>                    
+                    }
+                </table>
+            </fieldset>
+            
+             <fieldset>
+                <legend>Locations</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Location Name
+                        </th>
+                        
+                    </tr>
+                    @for (int i = 0; i < Model.locations.Count;i++ )
+                    {
+                        <tr>
+                            <td>
+                                @Model.locations.ElementAt(i).Name
+                            </td>
+                        </tr>                    
+                    }
+                </table>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Experience</legend>
+                <table>
+                    <tr>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Start Date
+                        </th>
+                        <th>
+                            End Date
+                        </th>
+
+                    </tr>
+                    @for (int i = 0; i < Model.experiences.Count;i++ )
+                    {
+                        <tr>
+                            <td>
+                                @Model.experiences.ElementAt(i).Description
+                            </td>
+                            <td>
+                                @Model.experiences.ElementAt(i).StartDate
+                            </td>
+                            <td>
+                                @Model.experiences.ElementAt(i).EndDate
+                            </td>
+                        </tr>                    
+                    }
+                </table>
+            </fieldset>
+
+        }
+        else{
+            <h2>There is no data to display!</h2>
+        }

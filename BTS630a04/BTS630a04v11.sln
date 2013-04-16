@@ -13,6 +13,7 @@ Global
 		{66D11983-31DD-4B59-A322-E1150C638547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66D11983-31DD-4B59-A322-E1150C638547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66D11983-31DD-4B59-A322-E1150C638547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D11983-31DD-4B59-A322-E1150C638547}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

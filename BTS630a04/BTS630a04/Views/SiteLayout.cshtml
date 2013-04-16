@@ -1,0 +1,375 @@
+﻿@{
+    bool isLoggedIn = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+    String username = isLoggedIn ? Membership.GetUser().UserName : null; //username is null if not logged in
+    String currentController = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+
+    //order of menu must match the order in the accordion
+    string[] chairMenu = { "Home",
+                        "Course",
+                        "Credentials",
+                        "Experience",
+                        "Link",
+                        "Location",
+                        "Major",
+                        "Professor",
+                        "Professorcredentials",
+                        "Professorlocation",
+                        "Program",
+                        "Programcourses",
+                        "Reporting",
+                        "Semester",
+                        "Semestercourses",
+                        "Teaching",
+                        "Profile",
+                        "CV",
+                        "Account",
+                    };
+    string[] professorMenu = { "Home",
+                                 "Profile",
+                                 "CV",
+                                 "Account"
+                    };
+
+    string[] userMenu = { "Home",
+                          "Account"
+                    };
+
+    String[] menu = userMenu;
+
+    if (Roles.IsUserInRole("Support") || Roles.IsUserInRole("Chair"))
+    {
+        menu = chairMenu;
+    }
+    else if (Roles.IsUserInRole("Professor"))
+    {
+        menu = professorMenu;
+    }
+    int menuindex = Array.FindIndex(menu, row => row.Contains(currentController));
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Seneca Staffing Application - @ViewBag.Title</title>
+
+    <link href="@Url.Content("~/assets/css/reset.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/assets/css/text.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/assets/css/grid.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/assets/css/layout.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/assets/css/nav.css")" rel="stylesheet" type="text/css" media="screen" />
+
+    <!--[if IE 6]><link rel="stylesheet" type="text/css" href="@Url.Content("~/assets/css/ie6.css")" media="screen" /><![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="@Url.Content("~/assets/css/ie.css")" media="screen" /><![endif]-->
+
+    <link href="@Url.Content("~/assets/css/seneca.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/assets/jquery-ui-1.10.2.custom/css/seneca-theme/jquery-ui-1.10.2.custom.min.css")" type="text/css" />
+
+</head>
+<body>
+    <div class="container_16">
+        <div class="grid_16">
+            <img src="~/assets/images/seneca.png" alt="" />
+        </div>
+        <div class="grid_16">
+            @if (isLoggedIn)
+            {
+                <p style="float: right">Welcome, @username &nbsp; @Html.ActionLink("Log off", "LogOff", "Account", null, null)</p>     
+            }
+            else
+            {
+                <p style="float: right">You are not logged in. Please @Html.ActionLink("Register", "Register", "Account", null, null) or @Html.ActionLink("Log on", "LogOn", "Account", null, null)</p>
+            }
+        </div>
+        <div class="clear"></div>
+        <div class="grid_4">
+            <div id="sidemenu">
+                <h3><a href="~/Home">Home</a></h3>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="~/Home/Index">Home</a>
+                        </li>
+                    </ul>
+                </div>
+
+                @if (isLoggedIn)
+                {
+                    if (Roles.IsUserInRole("Support") || Roles.IsUserInRole("Chair"))
+                    {
+                    <h3>Course</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Course">Course</a>
+
+                            </li>
+                            <li>
+                                <a href="~/Course/Create">Add Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Credentials</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Credentials">Credentials</a>
+                            </li>
+                            <li>
+                                <a href="~/Credentials/Create">Add Credential</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <h3>Experience</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Experience">Experience</a>
+                            </li>
+                            <li>
+                                <a href="~/Experience/Create">Add Experience</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Link</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Link">Link</a>
+                            </li>
+                            <li>
+                                <a href="~/Link/Create">Add Link</a>
+                            </li>
+                        </ul>
+                    </div>
+							
+                    <h3>Location</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Location">Location</a>
+                            </li>
+                            <li>
+                                <a href="~/Location/Create">Add Location</a>
+                            </li>
+                        </ul>
+                    </div>
+							
+                    <h3>Major</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Major">Major</a>
+                            </li>
+                            <li>
+                                <a href="~/Major/Create">Add Major</a>
+                            </li>
+                        </ul>
+                    </div>
+							
+                    <h3>Professor</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Professor" class="active">Professor</a>
+                            </li>
+                            <li>
+                                <a href="~/Professor/Create">Add Professor</a>
+                            </li>
+                        </ul>
+                    </div>
+							
+                    <h3>Professor-Credentials</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Professorcredentials">Professor-Credentials</a>
+                            </li>
+                            <li>
+                                <a href="~/Professorcredentials/Create">Add Professor-Credential</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Professor-Location</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Professorlocation">Professor-Location</a>
+                            </li>
+                            <li>
+                                <a href="~/Professorlocation/Create">Add Professor-Location</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Program</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Program">Program</a>
+                            </li>
+                            <li>
+                                <a href="~/Program/Create">Add Program</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Program-Courses</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Programcourses">Program-Courses</a>
+                            </li>
+                            <li>
+                                <a href="~/Programcourses/Create">Add Program-Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Reporting</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Reporting">Reporting</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Semester</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Semester">Semester </a>
+                            </li>
+                            <li>
+                                <a href="~/Semester/Create">Add Semester</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Semester-Courses</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Semestercourses">Semester-Courses</a>
+                            </li>
+                            <li>
+                                <a href="~/Semestercourses/Create">Add Semester-Courses</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3>Teaching</h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Teaching">Teaching</a>
+                            </li>
+                            <li>
+                                <a href="~/Teaching/Create">Add Teaching</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <h3><a href="~/Profile">Profile</a></h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Profile/UserName/@username">View My Profile</a>
+                            </li>
+                            <li>
+                                <a href="~/Profile/MemberList">View Member List</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h3><a href="~/CV">CV</a></h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/CV/UserName/@username">View My CV</a>
+                            </li>
+                            <li>
+                                <a href="~/CV/MemberList">View Member List</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    }
+                    else if (Roles.IsUserInRole("Professor"))
+                    {
+                        
+                    <h3><a href="~/Profile">Profile</a></h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/Profile/UserName/@username">View My Profile</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <h3><a href="~/CV">CV</a></h3>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="~/CV/UserName/@username">View My CV</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                        
+                    }
+                }
+
+                <h3><a href="~/Account">Account</a></h3>
+                <div>
+                    <ul>
+                        @if (!isLoggedIn)
+                        {<li>
+                            <a href="~/Account/Register">Register</a>
+                        </li>
+                        }
+                        @if (isLoggedIn)
+                        {<li>
+                            @Html.ActionLink("Log off", "LogOff", "Account", null, null)
+                        </li>
+                        }
+                        else
+                        {<li>
+                            @Html.ActionLink("Log on", "LogOn", "Account", null, null)
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="grid_5" style="width: 65%;">
+            @RenderBody()
+
+
+            <script src="@Url.Content("~/assets/js/jquery-1.9.1.min.js")" 
+        type="text/javascript"></script>
+            <script src="@Url.Content("~/assets/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js")" 
+        type="text/javascript"></script>
+
+
+
+            <script type="text/javascript">
+                $(function () {
+                    $("#sidemenu").accordion({ active: @menuindex });
+                    $(".datefield").datepicker({ 
+                        dateFormat: "mm/dd/yy",
+                        changeMonth: true,
+                        changeYear: true,
+                        showButtonPanel: true
+                    });
+
+                });
+            </script>
+
+
+            @RenderSection("scripts", required: false)
+        </div>
+
+
+        <div class="clear"></div>
+
+    </div>
+
+</body>
+</html>
